@@ -67,8 +67,3 @@ assert len(lmlp.parsed['epoch_valid_loss']) == 1000
 assert len(lmlp.parsed['epoch_valid_ppl']) == 1000
 assert len(lmlp.parsed['intvl_train_loss']) == 5000
 assert len(lmlp.parsed['intvl_train_ppl']) == 5000
-                
-    
-
-
-        
