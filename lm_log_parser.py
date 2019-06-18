@@ -53,7 +53,7 @@ class LMLogParser:
 if __name__ == '__main__':
     
     lmlp = LMLogParser(
-        file_loc = '../results/mos/abo/log.txt',
+        file_loc = '../results/test_exp/abo/log.txt',
         n_splits_train = 8,
         n_splits_valid = 6,
         n_splits_test = 5,
