@@ -49,21 +49,23 @@ class LMLogParser:
                     self.parse_train_log(splits)    
                 elif(n_splits == self.n_splits_valid):
                     self.parse_valid_log(splits)
+
+if __name__ == '__main__':
     
-lmlp = LMLogParser(
-    file_loc = '../results/mos/abo/log.txt',
-    n_splits_train = 8,
-    n_splits_valid = 6,
-    n_splits_test = 5,
-    loss_o_pos_train = 6,
-    loss_o_pos_valid = 4,
-    loss_o_pos_test = 3,
-    val_i_pos_train = 1,
-    val_i_pos_valid = 2,
-    val_i_pos_test = 1
-)
-lmlp.parse()
-assert len(lmlp.parsed['epoch_valid_loss']) == 1000
-assert len(lmlp.parsed['epoch_valid_ppl']) == 1000
-assert len(lmlp.parsed['intvl_train_loss']) == 5000
-assert len(lmlp.parsed['intvl_train_ppl']) == 5000
+    lmlp = LMLogParser(
+        file_loc = '../results/mos/abo/log.txt',
+        n_splits_train = 8,
+        n_splits_valid = 6,
+        n_splits_test = 5,
+        loss_o_pos_train = 6,
+        loss_o_pos_valid = 4,
+        loss_o_pos_test = 3,
+        val_i_pos_train = 1,
+        val_i_pos_valid = 2,
+        val_i_pos_test = 1
+    )
+    lmlp.parse()
+    assert len(lmlp.parsed['epoch_valid_loss']) == 1000
+    assert len(lmlp.parsed['epoch_valid_ppl']) == 1000
+    assert len(lmlp.parsed['intvl_train_loss']) == 5000
+    assert len(lmlp.parsed['intvl_train_ppl']) == 5000

@@ -53,6 +53,3 @@ class VizWrapper:
             fig_name = fig_name
         )
         viz.plot()
-
-
-
