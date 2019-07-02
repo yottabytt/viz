@@ -23,7 +23,7 @@ class VizWrapper:
             )
 
     @staticmethod
-    def get_exp(label, lmlp, intvl_len):
+    def get_exp(label, lmlp, intvl_len, color):
 
         lmlp.parse()
         
@@ -38,17 +38,20 @@ class VizWrapper:
             'sets': {
                 'train': epoch_train_ppl,
                 'valid': epoch_valid_ppl
-            }
+            },
+            'color': color
         }
 
     @staticmethod
-    def plot(exps, n_epochs, fig_name):
+    def plot(exps, n_epochs, fig_name, y_lim):
 
         viz = Viz(
             exps = exps,
             n_epochs = n_epochs,
             x_label = 'epoch',
             y_label = 'perplexity',
+            x_lim = None,
+            y_lim = y_lim,
             title = '',
             fig_name = fig_name
         )
