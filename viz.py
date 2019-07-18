@@ -44,5 +44,7 @@ class Viz:
         ax.set_title(self.title)
         ax.set_ylim(self.y_lim)
         ax.grid()
-        ax.legend(loc='upper right', shadow=True)
-        fig.savefig("figs/%s.png" % (self.fig_name))
+        lgd = ax.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+        fig.savefig("figs/%s.png" % (self.fig_name), 
+            bbox_extra_artists=(lgd,), 
+            bbox_inches='tight')
